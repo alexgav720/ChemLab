@@ -1,32 +1,34 @@
+class chemElement{
+    color;
+    name;
+    constructor(color, name){
+        this.color = color;
+        this.name = name;
+    }
+    append(element){
+        this.name += element.name + " ";
+    }
+}
+
+let mix = function(elementName){
+    switch(elementName){
+        case "HCl ":
+            return "blue"
+        case "AgNO3 ":
+            return "blue"
+        case "FeCl3 ":
+            return "yellow"
+        case "HCl AgNO3 ":
+            return "green"
+        
+    }
+}
+
 let s = Snap('#main');
-// s.append(paper)
-// let img = s.image("/untitled.svg",10,10,100,100)
-// img.drag()
 
+s.image("back.jpg",0,250,1900,720)
+s.image("shkaf.jpg",0,0,1900,300)
 
-// // potom
-
-// let rect = paper.rect(0,0,100,100)
-// let group = paper.group(img,rect);
-
-// Reusable drag function
-// function makeDraggable(element) {
-//     element.drag(
-//         function (dx, dy, x, y) {
-//             this.attr({
-//                 transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
-//             });
-//         },
-//         function () {
-//             this.data('origTransform', this.transform().local);
-//         }
-//     );
-
-//     // Additional styles (optional)
-//     element.attr({ cursor: 'move' });
-// }
-
-s.image("back.jpg")
 
 function isOverlap(element1, element2) {
     var bbox1 = element1.getBBox();
@@ -42,60 +44,68 @@ function isOverlap(element1, element2) {
 }
 let petry;
 let petryin;
-Snap.load("/newColb.svg",function(f){
+Snap.load("/petry.svg",function(f){
         petryin = f.select("#in")
         petryout = f.select("#out")
-        petry = s.group(petryout,petryin)
+        lines = f.select("#lines")
+        petry = s.group(petryout,petryin,lines)
+    petryin.element = new chemElement("", "");
     s.append(petry)
-    petry.drag();
     petryin.attr({
-        fill:"green"
+        fill:"lightblue"
     })
     petry.attr({
-        transform: "translate(" + 500 + ", " + 500 + ")"
+        transform: "translate(" + 885 + ", " + 280 + ")"
       });
 }, s);
 
-let  addcolb = function(startx,starty){Snap.load("/newColb.svg",function(f){
+let  addcolb = function(startx,starty,element){Snap.load("/newColb.svg",function(f){
     let colbin = f.select("#in"),
         colbout = f.select("#out"),
-        colbtext = f.select("#text"),
-        colb1 = s.group(colbout,colbin,colbtext)
+        text = f.select("#text"),
+        colb1 = s.group(colbout,colbin,text)
+    colb1.element = element;
+    text.attr("text", element.name);
     s.append(colb1)
     colb1.drag();
     colbin.attr({
-        fill:"red"
+        fill: element.color
     })
     colb1.attr({
         transform: "translate(" + startx + ", " + starty + ")"
       });
-    // colbin.animate({fill:"blue"},3000,mina.ease);
-
+    
+      let elementAmount = 0;
     colb1.mouseup(function() {
         if(isOverlap(colb1,petry)){
-           petryin.animate({
-                fill: "yellow"
-            },2000,mina.ease)
-            // colb1.animate({angle:"90"},1000,mina.ease)
+        petryin.element.append(colb1.element);
+        console.log(colb1.element, petryin.element);
+        elementAmount = petryin.element.name.split(" ")
+            if(elementAmount>4){
+            }
+
+                petryin.animate({
+                    fill: mix(petryin.element.name)
+                },2000,mina.easeinout)
         }
        
-            colb1.attr({
-              transform: "translate(" + startx + ", " + starty + ")"
-            });
+            colb1.animate({transform: "translate(" + startx + ", " + starty + ")"},500,mina.ease)
          
     })
 
 }, s);
 }
-let x =10;
-let y =10;
-for(let i =0;i<3;i++){
-    addcolb(x,y);
+let x =250;
+let y =75;
+
+let elements = [
+    new chemElement("blue","HCl"),
+    new chemElement("blue","AgNO3"),
+    new chemElement("yellow","FeCl3")
+    ]
+for(let elem of elements){
+    addcolb(x,y, elem);
     x+=150
-}   
+}
 
 
-// Snap.load(img,function(f){
-//     g = f.selectAll("polygon");
-//     s.append(g);
-// })

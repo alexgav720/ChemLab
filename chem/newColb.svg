@@ -1,13 +1,14 @@
-<?xml version="1.0"?>
-<svg width="227" height="345" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1" xml:space="preserve">
+<svg width="130" height="198" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1" xml:space="preserve">
  <g class="layer">
   <title>Layer 1</title>
   <g id="svg_3">
-   <path id="out" d="m77.61,28.95l-0.63,102.49l-64.23,176.4c-2.44,7.96 -12.48,32.75 15.56,36.37l175.05,0.45c-0.45,0 34.83,3.17 32.57,-34.38l-72.55,-177.94l-3.17,-103.58c-0.18,0.27 13.3,-4.79 13.3,-14.74c0,-9.95 -12.66,-13.57 -17.64,-13.57l-75.54,-0.45c-0.45,0.45 -15.83,-1.36 -15.83,12.66c0,14.02 13.12,16.74 13.12,16.28zm43.88,0.45l-43.61,-0.63l43.61,0.63zm21.26,-1.36l15.65,-0.18l-15.65,0.18z" fill="#ffffff" id="svg_6" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" transform="rotate(-0.160235 122.516 172.367)"/>
-   <path id="in" d="m32.78,313.9l176.41,2l-48.21,-139.91l-81.46,0l-46.74,137.91z" fill="#597dd6" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
-  </g>
- </g>
+   <g id="svg_13">
+    <g id="svg_4">
+     <path id="out" d="m39.95,17.64l-0.2,58.89l-36.62,101.46c-1.39,4.58 -7.12,18.84 9,20.87l100.57,-0.02c-0.26,0 20.02,1.76 18.66,-19.8l-41.97,-102.12l-1.99,-59.51c-0.1,0.16 7.63,-2.78 7.62,-8.49c-0.02,-5.72 -7.3,-7.78 -10.16,-7.77l-43.4,-0.14c-0.26,0.26 -9.1,-0.75 -9.08,7.3c0.02,8.06 7.56,9.59 7.56,9.33l0.01,0zm25.21,0.19l-25.05,-0.29l25.05,0.29zm12.21,-0.81l8.99,-0.13l-8.99,0.13z" fill="#ffffff" id="svg_6" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+     <path id="in" d="m14.42,181.28l101.36,1.15l-27.7,-80.39l-46.8,0l-26.85,79.24l-0.01,0z" fill="#597dd6" id="svg_2" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+    </g>
    </g>
-  <text id="text" fill="#000000" font-family="Serif" font-size="24" id="svg_12" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" style="cursor: move;" text-anchor="middle" x="114.73" xml:space="preserve" y="104.51">ytn</text>
+   <text id="text" fill="#000000" font-family="Serif" font-size="24" id="svg_1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" transform="matrix(0.446024 0 0 0.446024 18.4795 18.2943)" x="101.85" xml:space="preserve" y="73.27">Hg2OH</text>
+  </g>
  </g>
 </svg>
