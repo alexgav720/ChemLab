@@ -1,23 +1,17 @@
 let s = Snap('#main');
-let paper = Snap(200,200);
 let square = s.rect(0,0,160,160);
 
-paper.drag();
 square.drag();  
-square2.drag();  
 
-Snap.load("/untitled.svg",function(f){
-    // let paper = Snap('#star');   
-    paper.append(f)
-
-
+Snap.load("/book.svg",function(f){
+    g = f.selectAll("#book");
+    s.append(g);
+    
+    
 })
-
+let paper = Snap("#book");
 s.append(paper)
-square.attr({
-    fill: 'green'
-})
-
+paper.drag();
 
 
 // Snap.load(img,function(f){
