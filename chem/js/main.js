@@ -1,4 +1,4 @@
-let s = Snap("#main-winodw");
+let s = Snap('#main');
 
 s.attr({
     fill: 'green'
