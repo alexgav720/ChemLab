@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<svg width="227" height="345" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" version="1.1" xml:space="preserve">
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="svg_3">
+   <path id="out" d="m77.61,28.95l-0.63,102.49l-64.23,176.4c-2.44,7.96 -12.48,32.75 15.56,36.37l175.05,0.45c-0.45,0 34.83,3.17 32.57,-34.38l-72.55,-177.94l-3.17,-103.58c-0.18,0.27 13.3,-4.79 13.3,-14.74c0,-9.95 -12.66,-13.57 -17.64,-13.57l-75.54,-0.45c-0.45,0.45 -15.83,-1.36 -15.83,12.66c0,14.02 13.12,16.74 13.12,16.28zm43.88,0.45l-43.61,-0.63l43.61,0.63zm21.26,-1.36l15.65,-0.18l-15.65,0.18z" fill="#ffffff" id="svg_6" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" transform="rotate(-0.160235 122.516 172.367)"/>
+   <path id="in" d="m32.78,313.9l176.41,2l-48.21,-139.91l-81.46,0l-46.74,137.91z" fill="#597dd6" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+  </g>
+ </g>
+   </g>
+  <text id="text" fill="#000000" font-family="Serif" font-size="24" id="svg_12" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" style="cursor: move;" text-anchor="middle" x="114.73" xml:space="preserve" y="104.51">ytn</text>
+ </g>
+</svg>

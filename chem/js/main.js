@@ -26,7 +26,7 @@ let s = Snap('#main');
 //     element.attr({ cursor: 'move' });
 // }
 
-s.image("laba.jpg")
+s.image("back.jpg")
 
 function isOverlap(element1, element2) {
     var bbox1 = element1.getBBox();
@@ -42,43 +42,56 @@ function isOverlap(element1, element2) {
 }
 let petry;
 let petryin;
-Snap.load("/colb.svg",function(f){
+Snap.load("/newColb.svg",function(f){
         petryin = f.select("#in")
         petryout = f.select("#out")
-        petry = s.group(petryin,petryout)
+        petry = s.group(petryout,petryin)
     s.append(petry)
     petry.drag();
     petryin.attr({
         fill:"green"
     })
+    petry.attr({
+        transform: "translate(" + 500 + ", " + 500 + ")"
+      });
 }, s);
 
-let  addcolb = function(){Snap.load("/colb.svg",function(f){
+let  addcolb = function(startx,starty){Snap.load("/newColb.svg",function(f){
     let colbin = f.select("#in"),
         colbout = f.select("#out"),
-        colb1 = s.group(colbin,colbout)
+        colbtext = f.select("#text"),
+        colb1 = s.group(colbout,colbin,colbtext)
     s.append(colb1)
     colb1.drag();
     colbin.attr({
         fill:"red"
     })
-
-    colbin.animate({fill:"blue"},3000,mina.ease);
+    colb1.attr({
+        transform: "translate(" + startx + ", " + starty + ")"
+      });
+    // colbin.animate({fill:"blue"},3000,mina.ease);
 
     colb1.mouseup(function() {
         if(isOverlap(colb1,petry)){
            petryin.animate({
                 fill: "yellow"
-            },3000,mina.ease)
+            },2000,mina.ease)
+            // colb1.animate({angle:"90"},1000,mina.ease)
         }
-        colb1.attr({
-            cx:10,
-            cy:10})
+       
+            colb1.attr({
+              transform: "translate(" + startx + ", " + starty + ")"
+            });
+         
     })
+
 }, s);
 }
-for(let i =0;i<1;i++){
-    addcolb();
+let x =10;
+let y =10;
+for(let i =0;i<3;i++){
+    addcolb(x,y);
+    x+=150
 }   
 
 
