@@ -32,10 +32,10 @@ class AgNO3 extends chemElement {
     }
     append(element) {
        if (element instanceof HCl){
-        return [ new HNO3(), new AgCl()];
+        return [ new HNO3(), new AgCl(), `AgNO3 + HCl = AgCl(осадок белого цвета) + HNO3`];
        }
        if (element instanceof FeCl3){
-        return [ new FeNO3, new AgCl()];
+        return [ new FeNO3, new AgCl(),`3AgNO3 + FeCl3 = Fe(NO3)3 + 3AgCl(осадок белого цвета)`];
        }
     }
 }
@@ -53,10 +53,10 @@ class HCl extends chemElement {
     }
     append(element) {
        if (element instanceof AgNO3){
-        return [ new HNO3(), new AgCl()];
+        return [ new HNO3(), new AgCl(), `AgNO3 + HCl = AgCl(осадок белого цвета) + HNO3`];
        }
        if (element instanceof FeCl3){
-        throw new IncorrectReaction([this, element]);
+        throw new IncorrectReaction(`FeCl3 + HCl = X - Реакция не идет`);
        }
     }
 }
@@ -67,10 +67,10 @@ class FeCl3 extends chemElement {
     }
     append(element) {
        if (element instanceof AgNO3){
-        return [ new FeNO3, new AgCl()];
+        return [ new FeNO3, new AgCl(), "3AgNO3 + FeCl3 = Fe(NO3)3 + 3AgCl(осадок белого цвета)"];
        }
        if (element instanceof HCl){
-        throw new IncorrectReaction([this, element]);
+        throw new IncorrectReaction(`FeCl3 + HCl = X - #Реакция не идет`);
        }
     }
 }
@@ -110,18 +110,28 @@ class Mixer {
         } else {
             return s.gradient(`l(1, 0, 1, 1)${this.elements[0].color}-${this.elements[0].color}:80-${this.elements[1].color}:80-${this.elements[1].color}`)
         }
-        
+    }
+
+    getFormula() {
+        if (this.elements.length === 0){
+            return "";
+        } else if (this.elements.length === 1) {
+            return `${this.elements[0].name} + `;
+        } else {
+            return this.elements[2];
+        }
+
     }
 }
 
 let s = Snap('#main');
 
 //добавление картинок и текста
-s.image("back.jpg",0,250,1900,720)
+s.image("back.jpg",190,290,1600,720)
 s.image("shkaf.jpg",0,0,1900,300)
-let frmltext = s.text(1300,420,"")
+let frmltext = s.text(1000,450,".")
 frmltext.attr({
-    transform: 's4'  
+    fontSize: 28  
 })
 
 //функция для проверки наложения
@@ -156,13 +166,13 @@ Snap.load("./petry.svg",function(f){
         fill:petryin.mixer.getColor(),
     })
     petry.attr({
-        transform: "translate(" + 885 + ", " + 280 + ")"
+        transform: "translate(" + 750 + ", " + 280 + ")"
       });
 
       petry.dblclick(function(){
-        petryin.attr({fill:"lightblue"})
-        petryin.mixer.clear()
-        frmltext.attr("text", "");
+        petryin.mixer.clear();
+        petryin.attr({fill:petryin.mixer.getColor()});
+        frmltext.attr("text", petryin.mixer.getFormula());
     })
 }, s);
 
@@ -191,7 +201,10 @@ let  addcolb = function(startx,starty,element){Snap.load("./newColb.svg",functio
         if(isOverlap(colb1,petry)){
             try {
             petryin.mixer.mix(colb1.element);
+            frmltext.attr("text", petryin.mixer.getFormula());
             console.log(petryin.mixer.elements)
+            
+
             petryin.animate({
                 "fill-opacity": 0
               }, 1000, function() {
@@ -210,6 +223,7 @@ let  addcolb = function(startx,starty,element){Snap.load("./newColb.svg",functio
                 }
                 if (e instanceof IncorrectReaction){
                     console.log(e.message);
+                    frmltext.attr("text", e.message);
                 }
             }
         }
@@ -232,6 +246,7 @@ for(let elem of elements){
     addcolb(x,y, elem);
     x+=150
 }
+
 
 
 

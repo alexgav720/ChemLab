@@ -8,7 +8,7 @@
      <path id="in" d="m14.42,181.28l101.36,1.15l-27.7,-80.39l-46.8,0l-26.85,79.24l-0.01,0z" fill="#597dd6" id="svg_2" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
     </g>
    </g>
-   <text id="text" fill="#000000" font-family="Serif" font-size="24" id="svg_1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" transform="matrix(0.446024 0 0 0.446024 18.4795 18.2943)" x="101.85" xml:space="preserve" y="73.27">Hg2OH</text>
+   <text id="text" unselecteble="on" fill="#000000" font-family="Serif" font-size="24" id="svg_1" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" text-anchor="middle" transform="matrix(0.446024 0 0 0.446024 18.4795 18.2943)" x="101.85" xml:space="preserve" y="73.27">Hg2OH</text>
   </g>
  </g>
 </svg>

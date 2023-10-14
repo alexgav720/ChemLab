@@ -3,6 +3,7 @@
   <title>Layer 1</title>
   <g id="svg_12">
    <g id="svg_13">
+     <path id="krest" d="m21.49,0l-14.49,17.01l41,41.5l-48,50.5l16,16l45,-47l45,45l14.5,-15l-44,-49.5l47.5,-40.5l-15,-17.5l-46.01,41.49l-41.5,-42z" fill="#FF0000" id="svg_1" stroke="#592a2a" stroke-opacity="0.02"/>
     <path id="out" d="m20.5,31.95l-0.54,214.1l195.51,0l0,-212.82l23.28,-0.9l0,-32.33l-232.75,0l0,32.33l14.5,-0.38zm194.37,1.38l-196.03,-1.56l196.03,1.56z" fill="#ffffff" id="svg_1" stroke="#000000" stroke-linejoin="round" stroke-width="6"/>
     <path id="in" d="m23.85,60.61c2,-26 192.23,24 189.97,0l0,184.39c-0.23,-0.01 -191.91,0 -192.06,0l2.09,-184.39z" fill="#aaff56" id="svg_2" stroke="#000000" stroke-linejoin="round" stroke-width="6"/>
     <g id="lines">
