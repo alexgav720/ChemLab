@@ -116,6 +116,7 @@ class Mixer {
 
 let s = Snap('#main');
 
+//добавление картинок и текста
 s.image("back.jpg",0,250,1900,720)
 s.image("shkaf.jpg",0,0,1900,300)
 let frmltext = s.text(1300,420,"")
@@ -123,6 +124,7 @@ frmltext.attr({
     transform: 's4'  
 })
 
+//функция для проверки наложения
 function isOverlap(element1, element2) {
     var bbox1 = element1.getBBox();
     var bbox2 = element2.getBBox();
@@ -135,6 +137,8 @@ function isOverlap(element1, element2) {
         bbox1.y + bbox1.height > bbox2.y
     );
 }
+
+//создаём статичную чашку
 let petry;
 let petryin;
 Snap.load("./petry.svg",function(f){
@@ -144,6 +148,10 @@ Snap.load("./petry.svg",function(f){
         petry = s.group(petryout,petryin,lines)
     petryin.mixer = new Mixer();
     s.append(petry)
+    petryout.attr({
+        fill: "grey",
+        fillOpacity: .8,
+    })
     petryin.attr({
         fill:petryin.mixer.getColor(),
     })
@@ -158,6 +166,7 @@ Snap.load("./petry.svg",function(f){
     })
 }, s);
 
+//функция для добавления двигающихся колб
 let  addcolb = function(startx,starty,element){Snap.load("./newColb.svg",function(f){
     let colbin = f.select("#in"),
         colbout = f.select("#out"),
@@ -167,6 +176,10 @@ let  addcolb = function(startx,starty,element){Snap.load("./newColb.svg",functio
     text.attr("text", element.name);
     s.append(colb1)
     colb1.drag();
+    colbout.attr({
+        fill: "grey",
+        fillOpacity: .8,
+    })
     colbin.attr({
         fill: element.color
     })
@@ -174,7 +187,6 @@ let  addcolb = function(startx,starty,element){Snap.load("./newColb.svg",functio
         transform: "translate(" + startx + ", " + starty + ")"
       });
     
-      let elementAmount = 0;
     colb1.mouseup(function() { 
         if(isOverlap(colb1,petry)){
             try {
@@ -206,6 +218,8 @@ let  addcolb = function(startx,starty,element){Snap.load("./newColb.svg",functio
 
 }, s);
 }
+
+//добавление колб
 let x =250;
 let y =75;
 
@@ -283,10 +297,10 @@ for(let elem of elements){
 //         petry = s.group(petryout,petryin,lines)
 //     petryin.element = new chemElement("", "");
 //     s.append(petry)
-//     petryout.attr({
-//         fill: "grey",
-//         fillOpacity: .8,
-//     })
+    // petryout.attr({
+    //     fill: "grey",
+    //     fillOpacity: .8,
+    // })
 //     petryin.attr({
 //         fill: s.gradient("L(0, 0, 100, 100)#000-#f00:25-#fff")
 //     })
@@ -312,10 +326,10 @@ for(let elem of elements){
 //     text.attr("text", element.name);
 //     s.append(colb1)
 //     colb1.drag();
-//     colbout.attr({
-//         fill: "grey",
-//         fillOpacity: .8,
-//     })
+    // colbout.attr({
+    //     fill: "grey",
+    //     fillOpacity: .8,
+    // })
 //     colbin.attr({
 //         fill: element.color
 //     })
