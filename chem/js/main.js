@@ -127,7 +127,7 @@ class Mixer {
 let s = Snap('#main');
 
 //добавление картинок и текста
-s.image("back.jpg",190,290,1600,720)
+s.image("back.jpg",190,290,1600,640)
 s.image("shkaf.jpg",0,0,1900,300)
 let frmltext = s.text(1000,450,".")
 frmltext.attr({
@@ -238,9 +238,9 @@ let x =250;
 let y =75;
 
 let elements = [
-    new HCl("rgba(0,0,255,1)"),
-    new AgNO3("rgba(255,0,0,1)"),
-    new FeCl3("rgba(255,255,0,1)")
+    new HCl("rgba(97, 115, 242, 0.8)"),
+    new AgNO3("rgba(125, 122, 250, 0.8)"),
+    new FeCl3("rgba(235, 234, 40, 0.8)")
     ]
 for(let elem of elements){
     addcolb(x,y, elem);

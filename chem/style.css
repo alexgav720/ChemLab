@@ -5,6 +5,6 @@
     user-select: none;
 }
 body{
-    overflow: hidden;
+    overflow-x: hidden;
     background-color: #e8e7ed;
 }
